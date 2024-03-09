@@ -16,7 +16,7 @@
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 const auth = getAuth()
 
 //getting all the object from HTML
@@ -24,6 +24,8 @@ var fullName = document.getElementById("fullname");
 var email = document.getElementById("email");
 var password = document.getElementById("password");
 var copassword = document.getElementById("copassword")
+
+
 window.signup = function (e) {
 if(password)
 
