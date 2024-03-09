@@ -1,6 +1,7 @@
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+// Import the functions you need from the Firebase SDK
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
@@ -12,47 +13,59 @@
     messagingSenderId: "567780843830",
     appId: "1:567780843830:web:c9c04ad30289df71d91397"
   };
-
-  // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth()
+const auth = getAuth();
+const database = getDatabase();
 
-//getting all the object from HTML
-var fullName = document.getElementById("fullname");
-var email = document.getElementById("email");
-var password = document.getElementById("password");
-var copassword = document.getElementById("copassword")
+// Function to handle user signup
+function SignUp(e) {
+  e.preventDefault();
 
-//msaking a funtion for storing data
-window.signup = function (e) {
-if(password)
+  const fullName = document.getElementById("fullname").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("copassword").value;
 
-    if(fullName.value == "" || email.value =="" || password.value ==""){
-        alert("All Field Are Required")
-    }
-    if(password.value == copassword.value){
-     
-    }
-    else{
-        alert("Password Confirmation is Wrong")
-        return false
-    }
+  // Validate input fields
+  if (!fullName || !email || !password || !confirmPassword) {
+    alert("All fields are required");
+    return;
+  }
 
-    e.preventDefault();
-    var obj = {
-      firstName: fullName.value,
-      email: email.value,
-      password: password.value,
-    };
-  
-    createUserWithEmailAndPassword(auth, obj.email, obj.password)
-    .then(function(success){
-        window.location.replace('HTML/login.html')
-      // console.log(success.user.uid)
-      alert("signup successfully")
+  if (password !== confirmPassword) {
+    alert("Password confirmation does not match");
+    return;
+  }
+
+  // Create user with email and password
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // User signed up successfully
+      const user = userCredential.user;
+
+      // Save user details to the database
+      const userRef = ref(database, 'users/' + user.uid);
+      set(userRef, {
+        fullName: fullName,
+        email: email
+      })
+        .then(() => {
+          alert("Sign up successful!");
+          window.location.href = 'login.html'; // Redirect to login page
+        })
+        .catch((error) => {
+          console.error("Error saving user data: ", error.message);
+        });
     })
-    .catch(function(err){
-      alert("Error in " + err)
+    .catch((error) => {
+      alert("Error signing up: " + error.message);
     });
-    console.log(obj);
-  };
+}
+
+// Attach SignUp function to the signup form submission
+const signupForm = document.querySelector("form");
+if (signupForm) {
+  signupForm.addEventListener("submit", SignUp);
+} else {
+  console.error("Signup form not found.");
+}
