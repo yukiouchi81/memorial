@@ -1,8 +1,6 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  import { getAuth, createUserWithEmailAndPassword, } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
@@ -25,7 +23,7 @@ var email = document.getElementById("email");
 var password = document.getElementById("password");
 var copassword = document.getElementById("copassword")
 
-
+//msaking a funtion for storing data
 window.signup = function (e) {
 if(password)
 
@@ -56,6 +54,5 @@ if(password)
     .catch(function(err){
       alert("Error in " + err)
     });
-   console.log()
     console.log(obj);
   };
