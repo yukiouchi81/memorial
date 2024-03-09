@@ -1,10 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
@@ -40,7 +37,7 @@ window.login= function(e) {
       
       
       
-      window.location.replace('')
+      window.location.replace('index.html')
      // localStorage.setItem(success,user,uid)
       
     })
