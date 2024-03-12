@@ -62,6 +62,8 @@ button:hover{
   background-color: aliceblue;
 }
 
+/*_______________________________________________________________________________________________________________*/
+/*Upper part of main*/
 .upper{
   color: rgb(0, 0, 0);
   position: relative;
@@ -96,3 +98,13 @@ button:hover{
   padding: 20px 30px;
   border-radius: 0;
 }
+/*_______________________________________________________________________________________________________________*/
+/*Workout part in main*/
+.flex-container{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
