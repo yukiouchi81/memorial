@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" src="style.css">
+    <meta charset="utf-8">
+    <!--<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>-->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
-    <title>Memorial</title>
+    <title>Home</title>
   </head>
   <body>
-    <h1 id="header">Team Memorial</h1>
-    <p id="font">Your content starts here.</p>
+    <header>
+        <a href="index.html"><img src="images/logo.png" alt="logo" id="logo"></a>
+        <nav>
+          <ul class="nav_items">
+            <li><a href="#">Crowd Meter</a></li>
+            <li><a href="floormap.html">Floor Map</a></li>
+            <li><a href="#">Personal Contents</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="lonin"><button onclick="">Login</button></a>
+    </header>
+    <main>
+      <div class="upper">
+        <h1 >Memorial Gym</h1>
+        <p>Welcome to the Memorial Gym Page! Track your fitness journey here</p>
+        <button onclick="">Crowd Meter→</button>
+      </div>
 
-    <button onclick="Changetext()">Alternate name for project</button>
+    </main>
+
+   
     
     
   </body>
