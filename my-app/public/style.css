@@ -38,15 +38,17 @@ header{
 
 .nav_items li a{
   transition: all 0.3s ease 0s;
-  color: rgb(121, 119, 119);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   padding:10px;
   display: block;
   text-align: center;
+  border-bottom: 2px solid transparent; /* Red underline */  
+
 }
 .nav_items li a:hover{
-  color:rgb(0, 0, 0);
   cursor: pointer;
+  border-bottom: 2px solid red; /* Red underline */  
 }
 
 button {
@@ -55,11 +57,12 @@ button {
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
+  border-bottom: 2px solid transparent; /* Red underline */  
 }
 
 button:hover{
-  color: black;
-  background-color: aliceblue;
+  border-bottom: 2px solid red; /* Red underline */  
+
 }
 
 /*_______________________________________________________________________________________________________________*/
@@ -105,6 +108,79 @@ button:hover{
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-
+  padding: 40px 70px 500px;
+  padding-bottom: 500px;
+}
+.flex-container img{
+  width:400px;
+  height:320px;
+  opacity: 0.8;
+}
+.middle h1{
+  padding-top: 400px;
+  text-align: center;
 }
 
+/*footer*/
+footer{
+  background:linear-gradient(to right,#ac6767,#391212);
+  width: 100%;
+  color: #fff;
+  padding: 100px 0 30px;
+  font-size: 12px;
+  position: absolute;
+}
+.row{
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.col{
+  flex-basis: 25%;
+  padding:10px;
+}
+.col h3{
+  width: fit-content;
+  margin-bottom: 20px;
+  position: relative;
+}
+.col a{
+  text-decoration: none;
+  color: #fff;
+}
+footer ul li{
+  list-style: none;
+  margin-bottom: 12px;
+}
+footer ul li a{
+  text-decoration:none;
+  color: #fff;
+}
+footer .description{
+  padding-right: 70px;
+}
+hr{
+  width: 90%;
+  border:0;
+  margin: 20px auto;
+  border-bottom: 1px solid #ccc;
+}
+.copyright{
+  text-align: center;
+}
+footer a:hover{
+  border-bottom: 2px solid #fff; /* Red underline */  
+}
+
+/*floor map*/
+.wrap{
+  width: 100%;
+  aspect-ratio: 14 / 6;
+}
+.wrap iframe{
+  width: 100%;
+  height: 100%;
+}
