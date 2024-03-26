@@ -1,23 +1,22 @@
 body{
-  background-color: #ffffff;
   min-width:960px;
   font-family: sans-serif;
   height: 100vh;
 }
-
 header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10%;
-  background-color:rgb(255, 255, 255);
+  padding: 20px 10%;
+  background-color: rgb(255, 255, 255);
   font-size: 20px;
 }
 .nav_items{
   list-style: none;
   width: 100%;
   align-items: center;
-  padding: 30px 20px; 
+  background: rgba(255, 255, 255, 1);
+  padding: 30px 20px;
 }
 .nav_items li{
   display: inline-block;
@@ -33,6 +32,7 @@ header{
   margin:0;
   display: block;
   overflow: hidden;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -44,6 +44,7 @@ header{
   display: block;
   text-align: center;
   border-bottom: 2px solid transparent; /* Red underline */  
+
 }
 .nav_items li a:hover{
   cursor: pointer;
@@ -52,14 +53,14 @@ header{
 
 button {
   padding: 9px 25px;
-  color: #000000;
+  background-color: transparent;
+  font-size: 20px;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
   border-bottom: 2px solid transparent; /* Red underline */  
 }
-
 button:hover{
   border-bottom: 2px solid red; /* Red underline */  
 }
@@ -96,7 +97,6 @@ footer{
 .col #contact{
   margin-bottom: 5px;
 }
-
 .col a{
   text-decoration: none;
   color: #fff;
@@ -123,6 +123,23 @@ hr{
 }
 footer a:hover{
   border-bottom: 2px solid #fff; /* Red underline */  
+}
+
+/*floor map*/
+.wrap{
+  width: 100%;
+  aspect-ratio: 14 / 6;
+}
+.wrap iframe{
+  width: 100%;
+  height: 100%;
+}
+hr{
+  width: 90%;
+  border:0;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid #ccc;
 }
 
 /*floor map*/
