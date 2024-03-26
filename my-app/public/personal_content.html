@@ -389,4 +389,42 @@
             });
         }
         </script>
+        <script>
+            // Function to save the content of the weekly to-do list to local storage
+            function saveWeeklyToDos() {
+                var weeklyToDos = {}; // Initialize an object to store the content of each day
+        
+                // Loop through each textarea and store its content
+                document.querySelectorAll('.multiline-input').forEach(function(textarea, index) {
+                    weeklyToDos['day_' + (index + 1)] = textarea.value;
+                });
+        
+                // Save the weekly to-do list to local storage
+                localStorage.setItem('weeklyToDos', JSON.stringify(weeklyToDos));
+            }
+        
+            // Function to load the content of the weekly to-do list from local storage
+            function loadWeeklyToDos() {
+                var weeklyToDosJSON = localStorage.getItem('weeklyToDos');
+                if (weeklyToDosJSON) {
+                    var weeklyToDos = JSON.parse(weeklyToDosJSON);
+        
+                    // Loop through each day and populate the corresponding textarea with its content
+                    Object.keys(weeklyToDos).forEach(function(day, index) {
+                        document.querySelector('#' + day).value = weeklyToDos[day];
+                    });
+                }
+            }
+        
+            // Event listener for the "Save" button
+            document.querySelector('.submit-button').addEventListener('click', function() {
+                saveWeeklyToDos();
+            });
+        
+            // Load the content of the weekly to-do list when the page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                loadWeeklyToDos();
+            });
+        </script>
+        
 </body>
