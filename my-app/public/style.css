@@ -147,6 +147,12 @@ footer{
   margin-bottom: 20px;
   position: relative;
 }
+.col #para{
+  margin-bottom: 10px;
+}
+.col #contact{
+  margin-bottom: 5px;
+}
 .col a{
   text-decoration: none;
   color: #fff;
