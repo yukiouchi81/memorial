@@ -15,7 +15,6 @@ payload = {
     "submit" : "Login"
 }
 
-
 """The other way of sending payload to make sure we are not sharing credentials in same code is:
 First create a new python file "credentials.py" and write these two lines in that file:
     username = ""salvatm@plattsburgh.edu"
@@ -62,8 +61,8 @@ combined_list = [[name, date, time] for name, date, time in zip(item_name, date_
 print(combined_list)
 
 #Write to CSV using numpy
-#np.savetxt("dataNumpy.csv",combined_list,delimiter =", ",
-#fmt ='%s')
+np.savetxt("dataNumpy.csv",combined_list,delimiter =", ",
+fmt ='%s')
 
 #Write to CSV using CSV reader
 fields = ["name", "date","time"]
